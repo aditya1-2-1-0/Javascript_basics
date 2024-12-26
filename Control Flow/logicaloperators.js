@@ -30,6 +30,8 @@ if(!status){ //change into true
 // Not
 // And , Or from left to right
 
-// let result = true && true || false && !false
+let result = true && true || false && !false
 // result = true&&true || false&&true
-// result
+// result = true || false && true
+// result = true && true
+console.log(result);
