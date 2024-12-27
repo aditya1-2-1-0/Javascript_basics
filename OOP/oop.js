@@ -25,22 +25,22 @@ let Car = function(color,model) {
 let instanceOfCar = new Car("Yellow",2024)
 let instance = new Car("Blue",2022) 
 // console.log(instance instanceof Car);
-console.log(instanceOfCar.startEngine());
+// console.log(instanceOfCar.startEngine());
 
 // Prototype 
 // Each object created by "constructor" function have an access
 // to all "methods" present inside that "constructor" prototype
 
 
-console.log(instance.__proto__);
+// console.log(instance.__proto__);
 // we can also set "properties" to prototype
 Car.prototype.model = 2023
 
-console.log(Car.prototype.isPrototypeOf(Car));
+// console.log(Car.prototype.isPrototypeOf(Car));
 
 let arr = [1,2,3,4,5,6]
-console.log(arr.__proto__.__proto__);//chaining of prototype
-console.log(Object.prototype);
+// console.log(arr.__proto__.__proto__);//chaining of prototype
+// console.log(Object.prototype);
 
 
 
@@ -49,28 +49,75 @@ console.log(Object.prototype);
 
 // class declaration
 
-class Cars {
-    constructor(color,model) {
-        this.color = color;
-        this.model = model;
-    }
-        startEngine (){
-            console.log("This is start engine method of Cars");
-        }
-}
+// class Cars {
+//     constructor(color,model) {
+//         this.color = color;
+//         this.model = model;
+//     }
+//         startEngine (){
+//             console.log("This is start engine method of Cars");
+//         }
+// }
 
-Cars.prototype.breakMethod = function(){
-    console.log("This is break method of Cars");
-}
+// Cars.prototype.breakMethod = function(){
+//     console.log("This is break method of Cars");
+// }
 
-let honda =new Cars("Red",2029);
+// let honda =new Cars("Red",2029);
 // console.log(honda.__proto__.isPrototypeOf(honda));
 // honda.startEngine()
 
-console.log(honda.__proto__);
+// console.log(honda.__proto__);
 
 
 // Imp points
 // Classes are not hoisted
 // Classes are also first class citizens(Pass as a argument or return)
 // Classes are executed in strict mode
+
+
+// Getters and setters allow you to define Object accessors (Computed Properties)
+
+// 
+
+class Cars {
+    constructor(color,model) {
+        this.color = color;
+        this.model = model;
+    }
+        
+    startEngine (){
+            console.log("This is start engine method of Cars");
+        }
+    
+    get _startEngine(){
+        console.log("This is start engine method using get");
+        
+    }
+
+    get description(){
+        return `Color of bike is ${this.color} and its model is ${this.model}`
+    }
+    set changeColor(color){
+        console.log(this.color = color);
+        
+    }
+
+}
+
+let honda = new Cars("Neo",2027);
+// honda.startEngine() //accessing as function
+// honda._startEngine; // accessing as property
+
+// honda.changeColor = "Yellow" //set as property
+// console.log(honda.description);
+
+
+// static methods (method which is not present on constructor "prototype" property but "constructor" itself)
+
+// static method
+Cars.breakMethod = function(){
+    console.log("This is break method of car");
+    
+}
+Cars.breakMethod()
