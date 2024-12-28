@@ -49,18 +49,18 @@
 // Destructuring of "Objects"
 
 
-// let hotel = {
-//     name:"hotell",
-//     Location:"street no xyz",
-//     categories:["Chinese","Italian","English"],
-//     mainMenu:["FoodA","FoodB","FoodC"],
-//     starterMenu:["SpecialFoodA","SpecialFoodB"],
-//     openingHours:{
-//         sunday:{open:"09:00AM",close:"11:00PM"},
-//         monday:{open:"10:00AM",close:"10:00PM"},
-//         tuesday:{open:"10:00AM",close:"11:00PM"}
-//     }
-// }
+let hotel = {
+    name:"hotell",
+    Location:"street no xyz",
+    categories:["Chinese","Italian","English"],
+    mainMenu:["FoodA","FoodB","FoodC"],
+    starterMenu:["SpecialFoodA","SpecialFoodB"],
+    openingHours:{
+        sunday:{open:"09:00AM",close:"11:00PM"},
+        monday:{open:"10:00AM",close:"10:00PM"},
+        tuesday:{open:"10:00AM",close:"11:00PM"}
+    }
+}
 
 // let {name,Location,mainMenu} = hotel;
 // console.log(name,Location,mainMenu);
@@ -213,3 +213,39 @@ for(let [day,{open,close}] of entries){
     console.log(`On ${day} We open at ${open} And close at ${close}`);
     
 }
+
+
+// let itemSet = new Set([1,2,3,4,1,5,6,5])
+let itemSet = new Set("Programming")
+// console.log(itemSet);
+// console.log(itemSet.size);
+// console.log(itemSet.has(3));
+// itemSet.add(9)
+// console.log(itemSet);
+// itemSet.delete(9)
+// console.log(itemSet);
+
+// set are also iterables
+
+for(let item of itemSet){
+    console.log(item);
+    
+}
+
+
+// Map
+
+let restaurantMap = new Map()
+
+// Adding values into the map
+restaurantMap.set("name","Bombay Hotel")
+restaurantMap.set(1,"Address1")
+restaurantMap.set(2,"Address2").set(true,"We are open today").set(false,"We are close today")
+console.log(restaurantMap);
+
+// getting value
+// console.log(restaurantMap.get(2));
+console.log(restaurantMap.get(true));
+
+
+console.log(restaurantMap.size);
